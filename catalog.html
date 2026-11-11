@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Portfolio — Altenberg Motoren AG</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="index.html" class="brand">ALTENBERG</a>
+      <nav class="main-nav">
+        <a href="catalog.html" class="nav-link is-active">Catalog</a>
+        <a href="spareparts.html" class="nav-link">Spareparts</a>
+        <a href="support.html" class="nav-link">Support</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">
+            <span>About</span>
+            <span class="material-symbols-outlined icon-sm">expand_more</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html" class="nav-dropdown-link">About Us</a>
+            <a href="organization.html" class="nav-dropdown-link">Organization Structure</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn is-active" type="button">DE</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" type="button">EN</button>
+      </div>
+      <button class="icon-btn" aria-label="Search" type="button">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <a href="#" class="btn btn-outline btn-sm header-cta">Schedule Test Drive</a>
+      <div class="profile">
+        <img class="profile-img" alt="Profile"
+             src="https://lh3.googleusercontent.com/aida/ALJJyrB5Z9cl8K_hlYbN4z0fn95IZXkN_UoAkPVeAyV_5Slu5GSMJcOhqU7IW9Z83dAMutY4ZzpJkD8ZafxOSGI8OmaARvW8kyVSfaNZUg4_W3tpI2zRIPpuXeKHTVzYfLaT8cN9QO8HQ12vx6M4F4wm4GoAofTNORr5CQ2RG6XNLTiMLLeNwk2vkaPgegGG-XTxiNwcXut3k_bw1jJdk7jZ7yP_WF_9uw77tMPzVIF090WC">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page-main">
+
+  <!-- ============ PAGE HEADER + TOOLBAR ============ -->
+  <section class="page-header-section">
+    <div class="page-header-inner">
+      <div class="page-title-row">
+        <span class="dot"></span>
+        <span>Model Range • Generation 2025/2026</span>
+      </div>
+      <h1 class="page-title">Vehicle Portfolio</h1>
+      <p class="page-desc">
+        Explore the complete lineup of Altenberg precision sedans, SUVs, coupes, and all-electric grand tourers. Engineered with surgical tolerance in Bavaria for uncompromising performance.
+      </p>
+    </div>
+
+    <div class="toolbar">
+      <nav class="toolbar-tabs" aria-label="Filter by vehicle class" id="filterTabs">
+        <button class="tab-btn is-active" data-filter="all" type="button">All Models <span class="tab-count">(8)</span></button>
+        <button class="tab-btn" data-filter="sedan" type="button">Sedan <span class="tab-count">(2)</span></button>
+        <button class="tab-btn" data-filter="suv" type="button">SUV <span class="tab-count">(2)</span></button>
+        <button class="tab-btn" data-filter="coupe" type="button">Coupe <span class="tab-count">(1)</span></button>
+        <button class="tab-btn" data-filter="electric" type="button">Electric <span class="tab-count">(2)</span></button>
+        <button class="tab-btn" data-filter="performance" type="button">Performance <span class="tab-count">(1)</span></button>
+      </nav>
+
+      <div class="toolbar-controls">
+        <div class="toolbar-search">
+          <input id="searchInput" type="text" placeholder="SEARCH MODEL OR ENGINE">
+          <span class="material-symbols-outlined">search</span>
+        </div>
+        <div class="toolbar-sort">
+          <select id="sortSelect">
+            <option value="flagship">Sort: Flagship First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="power-desc">Power: Highest PS</option>
+          </select>
+          <span class="material-symbols-outlined">expand_more</span>
+        </div>
+        <div class="toolbar-views">
+          <button class="view-btn is-active" aria-label="Grid View" id="viewGrid" type="button">
+            <span class="material-symbols-outlined icon-sm">grid_view</span>
+          </button>
+          <button class="view-btn" aria-label="List View" id="viewDense" type="button">
+            <span class="material-symbols-outlined icon-sm">view_agenda</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VEHICLE GRID ============ -->
+  <section class="card-grid-section">
+    <div class="card-grid" id="vehicleGrid">
+
+      <!-- 1. S-Prestige -->
+      <article class="product-card" data-category="sedan" data-flagship="1" data-power="500" data-price="3450000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg S-Prestige"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuClSK5oSqH-uBUvHXY72p1nSs-Rg-IMtVrFkfXi5VXEooXESDbC31AxWJNK9OnyeS2PWQR24s-2NhrWKsWittqYwMXoUb-mEms7vF0Kd3uNYwO9qFinXpIDwSe3ZZ-faO8Pf0hjcI901FbqHRPZh6wm2I1FNZqTjM0sPKItE32nenItSowbsiW7oN7wNFhs52S1veYoT6xIIla4f9owGRATAhhxu2RSsvnNiqL7yqs">
+          <span class="product-badge"><span class="dot"></span><span>Executive Sedan</span></span>
+          <span class="product-badge-flagship"><span>Flagship</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">Class VI</span>
+              <span class="product-year">MY 2025</span>
+            </div>
+            <h2 class="product-title">Altenberg S-Prestige</h2>
+            <p class="product-desc">4.0L V8 Biturbo Hybrid with 48V mild hybrid assist, active air suspension, and executive rear lounge.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">500 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">0-100</span><span class="spec-main-value">4.4 <span class="spec-main-unit">S</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Drive</span><span class="spec-main-value">AWD</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 3.450.000.000</span>
+            </div>
+            <a href="#flagship-detail" class="product-cta">Inspect Architecture</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. G-Terra -->
+      <article class="product-card" data-category="suv" data-flagship="0" data-power="585" data-price="3890000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg G-Terra"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDybRgr0o_SG842g7WfgHbYFDyU0kowKHoRS34GFOJi7SRJkmYpStvIVljkx8kQsD2356J9fQaSwdbZwIY4A6UNgI3STawe9mUlnuAligtQsq1RD5D4Y1ItfprJS2E7SsTHWtZUTCi9x-n63bGBxfQEVt0_BE_qKeBvIYu9BjXdrbtbL6CGw6_jwprKAwoSiaxmpBctjR5ZqpHw90flcXgjM5Uth5oG4rqmselnoY8">
+          <span class="product-badge"><span class="dot"></span><span>Full-Size SUV</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">Terra Series</span>
+              <span class="product-year">MY 2025</span>
+            </div>
+            <h2 class="product-title">Altenberg G-Terra</h2>
+            <p class="product-desc">4.0L V8 Biturbo with 3-differential locks, permanent 4WD, and hydraulic roll stabilization system.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">585 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">0-100</span><span class="spec-main-value">4.5 <span class="spec-main-unit">S</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Drive</span><span class="spec-main-value">4x4</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 3.890.000.000</span>
+            </div>
+            <button class="product-cta" type="button">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. RS-Monza -->
+      <article class="product-card" data-category="performance" data-flagship="0" data-power="750" data-price="6200000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg RS-Monza"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv24P6c54GH-3AZ_VPKoB2CsqDShkHpN-il5RSyM4SJos1NBKH5ceYjbjhN77Po85NbICUpSlCuumKkt-IYY_OHpgSp3oS8xLkivn2IWwENAz-jD-ilRuUvwqDapOKoLjT3SUbxxF41knLDSnlJ703mGqOi5k-td2oSSeW2HlusgIt0_hbVn0Sf9TwlyqZMBaQnzBsO6ssn-e_ca3gsQt0OFyXoU-FHwKvSeWHddg">
+          <span class="product-badge is-error"><span class="dot"></span><span>Motorsport Division</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">Altenberg Racing</span>
+              <span class="product-year">MY 2026</span>
+            </div>
+            <h2 class="product-title">Altenberg RS-Monza</h2>
+            <p class="product-desc">4.4L Twin-Turbo Flat-Plane V8, carbon tub chassis, dry-sump lubrication, ceramic brakes.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">750 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">0-100</span><span class="spec-main-value">2.9 <span class="spec-main-unit">S</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Top Speed</span><span class="spec-main-value">340 <span class="spec-main-unit">KM/H</span></span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 6.200.000.000</span>
+            </div>
+            <button class="product-cta" type="button">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. E-Volt -->
+      <article class="product-card" data-category="electric" data-flagship="0" data-power="650" data-price="2980000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg E-Volt"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSOvwTXg9SrxZbuPo2Lg8mr05jdegnOmsw17DcpaWnnK8N5tJtnXK_wRrh1YIth_FXzqGZ5cIx0S5Jm-3VIzA9-Vf8gmKHFrkA7KKxFctgmrevbN21-0kjFyum5i7Saa7gaQ3O5ZhZc3ZoWeLIt2V3RRxOS0tHRAL9lJ0DL6N5AQ58kgfZezODaG3r6dJmV0mmPjDio54YeIeJi-qMkPk9usuWZj7x6uPvfUOP6Tk">
+          <span class="product-badge is-accent"><span class="dot"></span><span>Pure Electric GT</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">E-Drive Architecture</span>
+              <span class="product-year">MY 2025</span>
+            </div>
+            <h2 class="product-title">Altenberg E-Volt</h2>
+            <p class="product-desc">Dual Synchronous Motors, 800V silicon-carbide inverter, 108 kWh pack with 320 kW DC fast charging.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">650 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Range</span><span class="spec-main-value">680 <span class="spec-main-unit">KM</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Charge</span><span class="spec-main-value">18 <span class="spec-main-unit">MIN</span></span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 2.980.000.000</span>
+            </div>
+            <button class="product-cta" type="button">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. C-Sport -->
+      <article class="product-card" data-category="coupe" data-flagship="0" data-power="435" data-price="2150000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg C-Sport"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZGl84Wp4opLC1DNkXoOUamEnNgpGDXu8zILuh0g-Vwce1rnppB4vP0yGllf6WzTIqWXr66qAO50Ap9ICPVCPc-pKIEEcZI5rGgvxGEN5ldLBEIL5u4HdKb4XE6Y2Bqs-ZmnBC4baPVgs37ZVn2zdkNB4ly3F-j4ET8zV5QrzVe4FBSgyJkObl5r9Qy9bmQeYnfUKLCuASmIOQFlNhSrckU7w3HyA-AD6RcMbum9Q">
+          <span class="product-badge"><span class="dot"></span><span>GT Coupe</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">Gran Turismo</span>
+              <span class="product-year">MY 2025</span>
+            </div>
+            <h2 class="product-title">Altenberg C-Sport</h2>
+            <p class="product-desc">3.0L Inline-6 Turbocharged engine with 48V electric auxiliary supercharger, rear-wheel bias AWD.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">435 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">0-100</span><span class="spec-main-value">4.3 <span class="spec-main-unit">S</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Torque</span><span class="spec-main-value">520 <span class="spec-main-unit">NM</span></span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 2.150.000.000</span>
+            </div>
+            <button class="product-cta" type="button">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. A-Class -->
+      <article class="product-card" data-category="sedan" data-flagship="0" data-power="258" data-price="1450000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg A-Class"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlVWfvvZS0i5tCcK1rPRXzE7uOZOHE0i-7Dd3l8VSzaK-ownGIZcSokdwFGqh7vhdTJmAt0tF1oRjd9Z6s26b2D4fPeqPC5WUgY3Ur3KomniZqEYjg0djmAX5UlxRsWlC5s1m6-DiArSyWVbU4bvkbGZHC-Trg_eU-MgPKjS02wLK-JIId2yfHRobS7M7RwK-5GVNEfydRG5n0e8Srl4nNNV38Cd8ytZBHARJuoMA">
+          <span class="product-badge"><span class="dot"></span><span>Compact Executive</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">Class III</span>
+              <span class="product-year">MY 2025</span>
+            </div>
+            <h2 class="product-title">Altenberg A-Class</h2>
+            <p class="product-desc">2.0L Twin-Scroll Turbo 4-cylinder engine, dynamic handling package, sports steering system.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">258 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">0-100</span><span class="spec-main-value">5.8 <span class="spec-main-unit">S</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Drive</span><span class="spec-main-value">RWD</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 1.450.000.000</span>
+            </div>
+            <button class="product-cta" type="button">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. E-Terra -->
+      <article class="product-card" data-category="electric" data-flagship="0" data-power="516" data-price="3120000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg E-Terra"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3p5Mpv4BtQfmexiI_ezn8mzfpzyaFit_ZvfimzWXWAy11EeEffCubGc-Hfj3uWVb599giUTtUUehejgBxTk7dJyYwCZMHu5mfMdiehwEtxMIDdGH-FTyD24Nzomx2q5HNb37fmGswow_h6dw0Ngg-KlblfUTZXXTtfDty_16MnVrjDtPnlVMhaLMdN97zcj2mIYRpKqGzG_fbh2HQ7WokP8sI_eNyaBn887dRQIk">
+          <span class="product-badge is-accent"><span class="dot"></span><span>Pure Electric SUV</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">E-Drive Terra</span>
+              <span class="product-year">MY 2025</span>
+            </div>
+            <h2 class="product-title">Altenberg E-Terra</h2>
+            <p class="product-desc">Dual Permanent-Magnet Motors, torque vectoring 4WD, 100 kWh battery pack with off-road elevation.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">516 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Range</span><span class="spec-main-value">590 <span class="spec-main-unit">KM</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Drive</span><span class="spec-main-value">AWD</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 3.120.000.000</span>
+            </div>
+            <button class="product-cta" type="button">View Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. G-Compact -->
+      <article class="product-card" data-category="suv" data-flagship="0" data-power="224" data-price="1680000000">
+        <div class="product-media">
+          <img class="product-img" alt="Altenberg G-Compact"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI_sgSUvYftHbHy4rnqOGH-mxJmNkh25ZATLVRg9fzZN5dLeBw1XfNIvqsMt-l8ZZVJY2w8oaoC50-70767wrVGMxRusHwWoycna6M5QXl2HXNSOISre7RcBIHfo7Oy40GdbZm1WR80ygz4Ps6Y4sTKkDvOlUgECDeLRpId7br5_yTFxzbMjrY-hz7AfxJEJo-MpTQoCqXtqZs_fuPnvt8q3k8VeOvXg3zszHVVfw">
+          <span class="product-badge"><span class="dot"></span><span>Compact Crossover</span></span>
+        </div>
+        <div class="product-body">
+          <div>
+            <div class="product-head">
+              <span class="product-series">Urban Luxury</span>
+              <span class="product-year">MY 2025</span>
+            </div>
+            <h2 class="product-title">Altenberg G-Compact</h2>
+            <p class="product-desc">2.0L Turbo Mild-Hybrid, intelligent all-wheel drive, spacious 5-seat cabin with MBUX-grade voice assistant.</p>
+            <div class="product-specs">
+              <div class="product-spec"><span class="spec-small-label">Power</span><span class="spec-main-value">224 <span class="spec-main-unit">PS</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">0-100</span><span class="spec-main-value">6.7 <span class="spec-main-unit">S</span></span></div>
+              <div class="product-spec"><span class="spec-small-label">Drive</span><span class="spec-main-value">AWD</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="product-price">
+              <span class="price-caption">Starting Price (OTR Jakarta)</span>
+              <span class="price-amount">Rp 1.680.000.000</span>
+            </div>
+            <button class="product-cta" type="button">View Details</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ IN-DEPTH S-PRESTIGE DETAIL ============ -->
+  <section class="detail-section" id="flagship-detail">
+
+    <div class="detail-header">
+      <div>
+        <div class="detail-heading-row">
+          <span class="dot"></span>
+          <span class="detail-overline">Executive Dossier • Deep Dive</span>
+        </div>
+        <h2 class="detail-title">In Depth: Altenberg S-Prestige</h2>
+        <p class="detail-desc">
+          The pinnacle of Bavarian luxury sedans. Precision engineered with dual turbocharging, intelligent all-wheel steering, and an uncompromised rear-cabin sanctuary.
+        </p>
+      </div>
+      <div class="detail-meta">
+        <div class="detail-meta-item">
+          <span class="detail-meta-label">Reference Unit</span>
+          <span class="detail-meta-value">S-Prestige V8 4MATIC</span>
+        </div>
+        <div class="detail-meta-divider"></div>
+        <div class="detail-meta-item">
+          <span class="detail-meta-label">Base MSRP</span>
+          <span class="detail-meta-value is-accent">Rp 3.450.000.000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-split">
+
+      <!-- Gallery -->
+      <div class="detail-gallery">
+        <div class="gallery-main">
+          <img id="mainGalleryImage" alt="Altenberg S-Prestige exterior profile"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfddL-DRM8zBuaISJT9dmBHNnzOVfUfSkjgKmUjtpYFexvo7lhuSpJyvViKmgszsLg0A-yKxKk5NaeDQqHr4Cpl0ZyoEFu96Rcm1Kbxy5ruu6IAPAcE3zSld6SewVN6BzCj2ewW0GefzhUYz1lUmXTD1mCD5XFLsom32ZvLdcQIXmwZVS3L7_5gJeOXK_dXEKZirkqpYJWkuvHSOO8p9MyIjLiKKArVrRTrLf_ABc">
+          <div class="gallery-caption"><span id="galleryCaption">Exterior Profile • Obsidian Black Metallic</span></div>
+          <div class="gallery-status">
+            <span class="dot"></span>
+            <span>Live Studio Render</span>
+          </div>
+        </div>
+        <div class="gallery-thumbs">
+          <button class="gallery-thumb is-active" data-view="exterior" type="button">
+            <div class="gallery-thumb-img">
+              <img alt="S-Prestige exterior"
+                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-WfjYIwq7f3VETwt6Dhivr6CySW97qaVY7pMD8FRJFB_Bk_uiDwt2_2YEQdVkMtFHWnJPUUQ2toBE5HXOcDbMuCnYSjqDrWXuaiO6C3CvqcBMp8gWsCfK23pqpcHore8yH5DMIlH0Rs074yncIjdoR7yiMRQT7MD4k3cAOdarlojOgenx7XA0sefEffpzprVgGhN5aIf2x6m4lPsOLuIlfDDjv60sqUhi2oMTKKU">
+            </div>
+            <span class="gallery-thumb-title">1. Side &amp; Exterior</span>
+            <span class="gallery-thumb-sub">Bavarian proportions</span>
+          </button>
+          <button class="gallery-thumb" data-view="cockpit" type="button">
+            <div class="gallery-thumb-img">
+              <img alt="S-Prestige cockpit"
+                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6eEcZWGWnv2TEQCkPi_ZiWAMaZ8BDv_WdMJx_UPtqo9wf7sb7zXhgpsSiIcFOpzUDc0-vaqw22wwDfsd2mW3d-KgTo1hBQTzOjKfShzbaODdSOTQuQckdFgXL8ldwRTwjv2p5o_Mgu27FqZgT6qA8HpNyL662U8Wvo29Nc-O8f5VaE4xSFVZenN6yzhj9kxsNG61_Oaq7mtFZCEq48dSdsr8IHAg7bVCMnqTLdTA">
+            </div>
+            <span class="gallery-thumb-title">2. Driver Cockpit</span>
+            <span class="gallery-thumb-sub">Hyperscreen OS 4.0</span>
+          </button>
+          <button class="gallery-thumb" data-view="rear" type="button">
+            <div class="gallery-thumb-img">
+              <img alt="S-Prestige rear lounge"
+                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsNEsu02kHLohobCvkPODAS4bWQdiTJVUR17aeWFId2xvtpa4KkenXU4dXi8vG1jVOfNWIlwtm3gwZYwRmr_onaGFTr97Z_S2y18OtNoEAL5nzQgC1ROvXh2Lw_T8sZDv9fOM9Y0neQG975ZZp3SybhiXp5rsqTN1aXNhh1l9ca5TLaC3IwBhnSqBfzEtBbrjEaNshLJfMQenSFpGCjodOoQ1Rg2Rgmqv3s3d7yVs">
+            </div>
+            <span class="gallery-thumb-title">3. Executive Lounge</span>
+            <span class="gallery-thumb-sub">First-Class rear cabin</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="detail-sidebar">
+        <div>
+          <span class="customizer-overline">Bespoke Finishes</span>
+          <h3 class="customizer-title">Exterior Paint System</h3>
+
+          <div class="swatch-label">
+            <span>Selected Colorway:</span>
+            <span class="swatch-name" id="activeColorName">Obsidian Black Metallic</span>
+          </div>
+
+          <div class="swatch-grid">
+            <button class="swatch is-active" data-color="Obsidian Black Metallic" style="background:#0b0c0e" title="Obsidian Black Metallic" type="button"></button>
+            <button class="swatch" data-color="Selenite Grey Matte" style="background:#4b4e53" title="Selenite Grey Matte" type="button"></button>
+            <button class="swatch" data-color="Polar White" style="background:#f2f4f7" title="Polar White" type="button"></button>
+            <button class="swatch" data-color="High-Tech Silver" style="background:#a3a7ad" title="High-Tech Silver" type="button"></button>
+            <button class="swatch" data-color="Emerald Green Metallic" style="background:#102e23" title="Emerald Green Metallic" type="button"></button>
+            <button class="swatch" data-color="Alpine Blue Metallic" style="background:#1b3958" title="Alpine Blue Metallic" type="button"></button>
+          </div>
+          <p class="swatch-note">Nano-ceramic anti-scratch clear coat applied via robotic immersion process in Munich.</p>
+
+          <div class="metrics">
+            <span class="metrics-label">Dynamic Calibration</span>
+            <div class="metric">
+              <div class="metric-head">
+                <span class="metric-name">Torsional Rigidity</span>
+                <span class="metric-value">40,500 Nm/deg</span>
+              </div>
+              <div class="metric-track"><div class="metric-fill" data-fill="92"></div></div>
+            </div>
+            <div class="metric">
+              <div class="metric-head">
+                <span class="metric-name">Rear Axle Steering Angle</span>
+                <span class="metric-value">Up to 10.0°</span>
+              </div>
+              <div class="metric-track"><div class="metric-fill" data-fill="80"></div></div>
+            </div>
+            <div class="metric">
+              <div class="metric-head">
+                <span class="metric-name">Aero Drag Coefficient (Cd)</span>
+                <span class="metric-value">0.22 Cd</span>
+              </div>
+              <div class="metric-track"><div class="metric-fill" data-fill="96"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-actions">
+          <a href="#" class="btn-config">Configure S-Prestige</a>
+          <button class="btn-download" type="button">Download Spec Dossier (PDF)</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="detail-bottom">
+
+      <!-- Spec table -->
+      <div class="spec-table-section">
+        <div class="spec-table-header">
+          <div>
+            <span class="material-symbols-outlined icon-sm">tune</span>
+            <span class="spec-table-title">Engineering Parameters • DIN / ISO Norms</span>
+          </div>
+          <span class="spec-table-year">WLTP Certified</span>
+        </div>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tbody>
+              <tr><th scope="row">Combustion Unit</th><td>4.0-liter (3,982 cc) V8 Biturbo with 48V Integrated Starter-Generator (ISG)</td></tr>
+              <tr><th scope="row">Power Output</th><td>370 kW (503 hp) @ 5,500 rpm + 15 kW EQ Boost</td></tr>
+              <tr><th scope="row">Torque Curve</th><td>700 Nm @ 2,000 – 4,500 rpm (Overboost to 750 Nm)</td></tr>
+              <tr><th scope="row">Transmission</th><td>9G-Tronic 9-speed automatic with magnesium steering paddles</td></tr>
+              <tr><th scope="row">Drivetrain System</th><td>Permanent All-Wheel Drive (AWD) with electro-mechanical differential lock</td></tr>
+              <tr><th scope="row">Sprint (0-100 km/h)</th><td class="is-highlight">4.4 seconds (Sport+ Launch Mode enabled)</td></tr>
+              <tr><th scope="row">Combined Economy</th><td>10.2 l / 100 km (Combined WLTP) • 233 g CO2/km</td></tr>
+              <tr><th scope="row">Seating Configuration</th><td>4 or 5 seats with First-Class executive reclining package (43.5° incline)</td></tr>
+              <tr><th scope="row">Dimensions &amp; Weight</th><td>L: 5,289 mm • W: 1,921 mm • H: 1,503 mm • Kerb: 2,130 kg</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Equipment + Concierge -->
+      <div class="equipment">
+        <div>
+          <div class="equipment-header">
+            <span class="material-symbols-outlined">verified</span>
+            <span class="equipment-title">Standard Equipment Highlights</span>
+          </div>
+          <div class="equipment-grid">
+            <div class="equipment-item">
+              <span class="material-symbols-outlined">airline_seat_recline_extra</span>
+              <h4 class="equipment-item-name">AIRMATIC Adaptive Air</h4>
+              <p class="equipment-item-desc">Continuous damping control responding to road surface scan every 3 milliseconds.</p>
+            </div>
+            <div class="equipment-item">
+              <span class="material-symbols-outlined">surround_sound</span>
+              <h4 class="equipment-item-name">Burmester® 4D High-End</h4>
+              <p class="equipment-item-desc">31 speakers, 8 exciter transducers in seats, 1,750 watts discrete acoustic output.</p>
+            </div>
+            <div class="equipment-item">
+              <span class="material-symbols-outlined">highlight</span>
+              <h4 class="equipment-item-name">Digital Light Projection</h4>
+              <p class="equipment-item-desc">2.6 million micro-mirrors guiding navigational arrows onto the road surface.</p>
+            </div>
+            <div class="equipment-item">
+              <span class="material-symbols-outlined">auto_videocam</span>
+              <h4 class="equipment-item-name">Level 3 Drive Assist</h4>
+              <p class="equipment-item-desc">LiDAR-supported conditionally automated pilotage up to 60 km/h in dense traffic.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="concierge-card">
+          <div class="concierge-head">
+            <div>
+              <span class="concierge-overline">Indonesian Representation</span>
+              <h4 class="concierge-title">Bespoke Concierge</h4>
+            </div>
+            <span class="material-symbols-outlined icon-muted">support_agent</span>
+          </div>
+          <p class="concierge-desc">
+            Arrange a private showroom showing at Altenberg Pavilion SCBD Jakarta or request an executive test fleet delivery directly to your estate.
+          </p>
+          <div class="concierge-actions">
+            <a href="#" class="btn-config">Book Private Consultation</a>
+            <a href="#" class="btn-download">Request Quote</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ COMPARE BAR ============ -->
+  <aside class="compare-bar">
+    <div class="compare-info">
+      <span class="material-symbols-outlined">compare_arrows</span>
+      <div>
+        <span class="compare-title">Technical Cross-Comparison Tool</span>
+        <p class="compare-desc">
+          Compare torque curves, payload dimensions, and homologation metrics across 2 to 4 Altenberg vehicles simultaneously.
+        </p>
+      </div>
+    </div>
+    <div class="compare-actions">
+      <button class="btn" type="button">Launch Matrix Comparator</button>
+    </div>
+  </aside>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand">ALTENBERG</span>
+        <p class="footer-tagline">Bavarian Engineering &amp; High-Performance Mobility.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Models</h4>
+        <ul class="footer-links">
+          <li><a href="catalog.html">A-Class Sedan</a></li>
+          <li><a href="catalog.html">S-Prestige</a></li>
+          <li><a href="catalog.html">G-Terra SUV</a></li>
+          <li><a href="catalog.html">E-Volt Electric</a></li>
+          <li><a href="catalog.html">C-Sport Coupe</a></li>
+          <li><a href="catalog.html">Performance Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Ownership &amp; Service</h4>
+        <ul class="footer-links">
+          <li><a href="spareparts.html">Genuine Spareparts</a></li>
+          <li><a href="support.html">Maintenance Schedule</a></li>
+          <li><a href="support.html">Altenberg Warranty</a></li>
+          <li><a href="support.html">Workshop Locator</a></li>
+          <li><a href="support.html">Financial Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="organization.html">Organization Structure</a></li>
+          <li><a href="about.html">Sustainability Charter</a></li>
+          <li><a href="about.html">Press &amp; Media</a></li>
+          <li><a href="about.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact &amp; Support</h4>
+        <ul class="footer-links">
+          <li><a href="support.html">Customer Assistance</a></li>
+          <li><a href="support.html">Roadside Help 24/7</a></li>
+          <li><a href="support.html">Concierge Service</a></li>
+          <li><a href="support.html">Legal &amp; Compliance</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <span>© 2025 Altenberg Motoren AG. All rights reserved.</span>
+        <span>•</span>
+        <a href="#">Privacy Statement</a>
+        <span>|</span>
+        <a href="#">Cookie Settings</a>
+        <span>|</span>
+        <a href="#">Imprint</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn"><span class="material-symbols-outlined">public</span></a>
+        <a href="#" aria-label="Social"><span class="material-symbols-outlined">share</span></a>
+        <a href="#" aria-label="Media"><span class="material-symbols-outlined">smart_display</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ==========================================
+     CATALOG PAGE INTERACTIONS
+     ========================================== */
+  (function () {
+    const filterButtons = document.querySelectorAll('#filterTabs .tab-btn');
+    const cards = document.querySelectorAll('.product-card');
+    const searchInput = document.getElementById('searchInput');
+    const sortSelect = document.getElementById('sortSelect');
+    const gridContainer = document.getElementById('vehicleGrid');
+
+    let currentCategory = 'all';
+
+    function applyFilterAndSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+
+      cards.forEach(function (card) {
+        const category = card.getAttribute('data-category');
+        const title = card.querySelector('.product-title').textContent.toLowerCase();
+        const desc = card.querySelector('.product-desc').textContent.toLowerCase();
+
+        const matchesCategory = currentCategory === 'all' || category === currentCategory;
+        const matchesQuery = !query || title.includes(query) || desc.includes(query);
+
+        card.classList.toggle('is-hidden', !(matchesCategory && matchesQuery));
+      });
+    }
+
+    filterButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterButtons.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        currentCategory = btn.getAttribute('data-filter');
+        applyFilterAndSearch();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilterAndSearch);
+
+    /* Sorting */
+    sortSelect.addEventListener('change', function () {
+      const value = sortSelect.value;
+      const cardArray = Array.prototype.slice.call(cards);
+
+      cardArray.sort(function (a, b) {
+        const priceA = parseInt(a.getAttribute('data-price'), 10);
+        const priceB = parseInt(b.getAttribute('data-price'), 10);
+        const powerA = parseInt(a.getAttribute('data-power'), 10);
+        const powerB = parseInt(b.getAttribute('data-power'), 10);
+        const flagshipA = parseInt(a.getAttribute('data-flagship'), 10);
+        const flagshipB = parseInt(b.getAttribute('data-flagship'), 10);
+
+        if (value === 'price-asc') return priceA - priceB;
+        if (value === 'price-desc') return priceB - priceA;
+        if (value === 'power-desc') return powerB - powerA;
+        if (value === 'flagship') return flagshipB - flagshipA;
+        return 0;
+      });
+
+      cardArray.forEach(function (c) { gridContainer.appendChild(c); });
+    });
+
+    /* Grid / Dense toggle */
+    const viewGrid = document.getElementById('viewGrid');
+    const viewDense = document.getElementById('viewDense');
+
+    viewGrid.addEventListener('click', function () {
+      gridContainer.classList.remove('is-dense');
+      viewGrid.classList.add('is-active');
+      viewDense.classList.remove('is-active');
+    });
+
+    viewDense.addEventListener('click', function () {
+      gridContainer.classList.add('is-dense');
+      viewDense.classList.add('is-active');
+      viewGrid.classList.remove('is-active');
+    });
+
+    /* Gallery switching */
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    const mainImage = document.getElementById('mainGalleryImage');
+    const caption = document.getElementById('galleryCaption');
+
+    const viewData = {
+      exterior: {
+        caption: 'Exterior Profile • Obsidian Black Metallic',
+        alt: 'Altenberg S-Prestige exterior profile, Obsidian Black Metallic, cinematic studio lighting'
+      },
+      cockpit: {
+        caption: 'Command Cockpit • Triple OLED Panoramic Interface',
+        alt: 'Altenberg S-Prestige driver cockpit with curved floating OLED cluster'
+      },
+      rear: {
+        caption: 'First-Class Executive Sanctuary • Saddle Tan Nappa Leather',
+        alt: 'Altenberg S-Prestige executive rear lounge in saddle tan Nappa leather'
+      }
+    };
+
+    thumbs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        thumbs.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        const view = btn.getAttribute('data-view');
+        if (viewData[view]) {
+          mainImage.classList.add('is-fading');
+          setTimeout(function () {
+            mainImage.setAttribute('alt', viewData[view].alt);
+            caption.textContent = viewData[view].caption;
+            mainImage.classList.remove('is-fading');
+          }, 150);
+        }
+      });
+    });
+
+    /* Color swatches */
+    const swatches = document.querySelectorAll('.swatch');
+    const activeColorName = document.getElementById('activeColorName');
+
+    swatches.forEach(function (swatch) {
+      swatch.addEventListener('click', function () {
+        swatches.forEach(function (s) { s.classList.remove('is-active'); });
+        swatch.classList.add('is-active');
+        const colorName = swatch.getAttribute('data-color');
+        activeColorName.textContent = colorName;
+        caption.textContent = 'Exterior Profile • ' + colorName;
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

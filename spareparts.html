@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genuine Spareparts — Altenberg Motoren AG</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="index.html" class="brand">ALTENBERG</a>
+      <nav class="main-nav">
+        <a href="catalog.html" class="nav-link">Catalog</a>
+        <a href="spareparts.html" class="nav-link is-active">Spareparts</a>
+        <a href="support.html" class="nav-link">Support</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button">
+            <span>About</span>
+            <span class="material-symbols-outlined icon-sm">expand_more</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html" class="nav-dropdown-link">About Us</a>
+            <a href="organization.html" class="nav-dropdown-link">Organization Structure</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn is-active" type="button">DE</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" type="button">EN</button>
+      </div>
+      <button class="icon-btn" aria-label="Search" type="button">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <a href="#" class="btn btn-outline btn-sm header-cta">Schedule Test Drive</a>
+      <div class="profile">
+        <img class="profile-img" alt="Profile"
+             src="https://lh3.googleusercontent.com/aida/ALJJyrB5Z9cl8K_hlYbN4z0fn95IZXkN_UoAkPVeAyV_5Slu5GSMJcOhqU7IW9Z83dAMutY4ZzpJkD8ZafxOSGI8OmaARvW8kyVSfaNZUg4_W3tpI2zRIPpuXeKHTVzYfLaT8cN9QO8HQ12vx6M4F4wm4GoAofTNORr5CQ2RG6XNLTiMLLeNwk2vkaPgegGG-XTxiNwcXut3k_bw1jJdk7jZ7yP_WF_9uw77tMPzVIF090WC">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page-main">
+
+  <!-- ============ SEARCH & FILTER ============ -->
+  <section class="parts-search-section">
+    <div class="parts-search-inner">
+
+      <div class="parts-search-header">
+        <div class="parts-search-title-block">
+          <div class="parts-search-overline">
+            <span class="dot"></span>
+            <span>Original Equipment Manufacturer</span>
+          </div>
+          <h1 class="parts-search-title">Genuine Altenberg Spareparts</h1>
+          <p class="parts-search-subtitle">
+            Manufactured to original factory blueprints in Bavaria for peerless safety, longevity, and performance.
+          </p>
+        </div>
+        <div class="parts-search-meta">
+          <span><span class="dot-round"></span>Live Factory Registry</span>
+          <span>•</span>
+          <span>DIN EN ISO 9001 Certified</span>
+        </div>
+      </div>
+
+      <div class="parts-search-panel">
+        <div class="parts-inputs">
+          <div class="parts-input-group">
+            <span class="material-symbols-outlined">search</span>
+            <input id="partSearchInput" type="text"
+                   placeholder="Search by part name, part number (e.g. ALT-8832-BK), or vehicle VIN...">
+            <button class="clear-btn" type="button" aria-label="Clear Search"
+                    onclick="document.getElementById('partSearchInput').value='';">
+              <span class="material-symbols-outlined icon-sm">close</span>
+            </button>
+          </div>
+          <div class="parts-input-group parts-select-group">
+            <span class="material-symbols-outlined">directions_car</span>
+            <select id="modelSelector">
+              <option value="all">Filter by Model: All Models</option>
+              <option value="s-prestige">S-Prestige Sedan</option>
+              <option value="g-terra">G-Terra SUV</option>
+              <option value="e-volt">E-Volt Electric</option>
+              <option value="a-class">A-Class Sportback</option>
+              <option value="c-sport">C-Sport Coupe</option>
+            </select>
+            <span class="material-symbols-outlined chevron">expand_more</span>
+          </div>
+        </div>
+
+        <div class="category-chips" id="categoryChips">
+          <button class="category-chip is-active" type="button">All Components</button>
+          <button class="category-chip" type="button">Engine &amp; Drivetrain</button>
+          <button class="category-chip" type="button">Brakes &amp; Deceleration</button>
+          <button class="category-chip" type="button">Suspension &amp; Chassis</button>
+          <button class="category-chip" type="button">Electrical &amp; Battery</button>
+          <button class="category-chip" type="button">Interior Trim</button>
+          <button class="category-chip" type="button">Exterior &amp; Lighting</button>
+          <button class="category-chip" type="button">Oil &amp; Fluids</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PARTS GRID ============ -->
+  <section class="parts-grid-section">
+    <div class="parts-grid-inner">
+
+      <div class="parts-grid-header">
+        <div>
+          <span class="parts-grid-overline">Factory Storage System</span>
+          <h2 class="parts-grid-title">Registered OEM Components</h2>
+        </div>
+        <div class="parts-grid-count">Showing 8 of 1,492 Parts</div>
+      </div>
+
+      <div class="card-grid parts-grid">
+
+        <!-- Part 1 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="Carbon-Ceramic Brake Disc"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXHQwk21IrKr9-Ze-H4Mdnb2IYnDblkjcL2hDOaIuv2sABOLu02zwUzvX_4TbpA0S-Zshw7nRY75Ofy0qZJlKT6rfaE-sDf5cXPr4IKVmgJm6RgWY_uBmFoWz28TtBkZKdUqP8_oPh1aQMFK7okVdY9zznjcIfkpqFwxlIuByTr5jJTTnzHvBXc1C4yplcnlSAvCk9c9sn7fugOL5VpmlXgXl4pbJYRH03fkH78gI">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-BRK-9921</span>
+                <span class="part-location">Axle 1 / Front</span>
+              </div>
+              <h3 class="product-title">Carbon-Ceramic Brake Disc &amp; Caliper Set</h3>
+              <p class="product-desc">Laser-balanced high-silicon carbon matrix delivering zero thermal fade up to 1,000°C.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">S-Prestige</span>
+                <span class="part-compat-tag">RS-Monza</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 42.500.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Part 2 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="High-Performance Turbocharger"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcPOzCkGdCf1Dbs066DiG-malayNoXErdbNcxtfEL7Ar1jqKGFjXcfoIT8f2DwCh-ro3hLzlejzdOHbX9sBm5ohIFrfdHlkbugAYKc6ZFcaiqkLdRbpDBfpgdO86UOBoqtN-Fd-6Mfwosr7jNM4X9st8Upw04YUCRV2m4WpsQ5K6eHxVCunnflftirDlZ2XbZmavcFEMF25O-XqkFlY7BsQhdOxuwzbElzMvoIDCg">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-ENG-4410</span>
+                <span class="part-location">Engine Bank R</span>
+              </div>
+              <h3 class="product-title">High-Performance Turbocharger Core (Right Bank)</h3>
+              <p class="product-desc">Dual ceramic ball-bearing assembly with titanium compressor wheel rated for 2.6 bar boost.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">S-Prestige</span>
+                <span class="part-compat-tag">G-Terra V8</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 38.000.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Part 3 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="Adaptive Air Suspension Strut"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxgwWLw6XtcdH33UVmoSbcGicwrPYFhZXSW5ch-tW7Wyi9Mz9tGEKwYFxXhO5_IJ_qHkF2bdTxB64WzlW_h9qAAgZv1xTZV0-_w01hz6ppuWmN3sGU83kulrgKJqoxCn_Y06eZDVAzhjPERmQRQ7Js-LqHQ4PD2NWX1Re8dxN9aPg0w0Bm7ZpCmSInfbrnf78jDGvvhDI8kRNJLfe1keafGIDL7HP7G3akV49zXh4">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-SUS-2204</span>
+                <span class="part-location">Chassis Front</span>
+              </div>
+              <h3 class="product-title">Adaptive Air Suspension Strut (Front Axle)</h3>
+              <p class="product-desc">Continuous Damping Control (CDC) chamber with triple-chamber air bellows.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">S-Prestige</span>
+                <span class="part-compat-tag">G-Terra</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 24.800.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Part 4 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="LED Matrix Headlight Assembly"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF8lVOrk8zSOcqp1dUMGOKb0XG3jBBTlVpFUu6NQ3mVvK7dk7PvJuO4yU293cmT5P2rsKQKy9Z2kBRT9C0AS5m5xmTSEa9aNoidihw5NnYEmov2u4b9ndWflYEKHqC66zEqYjYEDmaPEfGwO80x8PrYHzTiY5IRnJhArK9DuHpCXxBoFmt0n0SCfQzEarTrXk_-Z8H5Mz4ln5Fo5hjSYA18eTwTwBs4UREY6YipmQ">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-LGT-7712</span>
+                <span class="part-location">Front Optics</span>
+              </div>
+              <h3 class="product-title">LED Matrix Headlight Assembly (Laser Light)</h3>
+              <p class="product-desc">84 individual micro-diodes per cluster with 600m laser high-beam augmentation.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">A-Class</span>
+                <span class="part-compat-tag">C-Sport</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 31.200.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Part 5 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="Performance 0W-40 Synthetic Motor Oil"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMRfQEfEtqwelH9I9z_C7_9cCZUnTkADkCOWO2zjh8j8tfYSjXmV2WWVn4PyPOWh2NWSksoEwjH-EgNkWliEGA7zlTupITEqQpykEZmLYix9WDkaOQOb6UyaoS6sIDgVrD7Gnxng8gzoPn6QLLfj5LMAs67K8y_HKQZ5Udn_YIGhjNTnVgunvIF6o-Tiqb2jRCqWXTlWtPIdDMhGauNXoOVXE4uvjjFgzEbEIIx3s">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-LUB-0040</span>
+                <span class="part-location">5 Liters</span>
+              </div>
+              <h3 class="product-title">Altenberg Performance 0W-40 Synthetic Motor Oil</h3>
+              <p class="product-desc">Full-synthetic PAO ester base designed specifically for high-stress biturbo powertrains.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">All Combustion Models</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 1.450.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Part 6 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="800V High-Voltage Battery Module"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ9oe5bPwNJtSckS_tFTB51JqZwbT-s9GytBxsj5haPo-7U0N0l9ZAAglNAika1eQpmwlpNwstg_Hwt66T0ScGt3YYu9KMACKClD6nJvvKbT07ab02YgupONXyod3zgI8JDxAgAtI-9ALnvguPzSY7Pe9gqrT0JV2k_YfBAi3IJsr4lr9jY-mHkV22858Es-zJRybFbc9YUsJOAKnLy7S0omwsfLf-aJpi6cwZ_IE">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-EV-8800</span>
+                <span class="part-location">Battery Cell Tray</span>
+              </div>
+              <h3 class="product-title">800V High-Voltage Lithium-Ion Battery Module</h3>
+              <p class="product-desc">Next-generation pouch cells featuring integrated dielectric immersion heat sink.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">E-Volt</span>
+                <span class="part-compat-tag">E-Terra</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 85.000.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Part 7 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="Open-Pore Anthracite Oak Dash Trim"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_6P55mGNLqjL22AA-efTv-2guHBroTzXH_v44Rki2jDnp0do8VQENUZ1qLyrNgUSxNB15hqtLTXKBodL9fAWN7TvutI1nyXfnsTKy8MVmWssnD88YrPI49JaBChzKtSDpHK7PIQSJ64EMYxHCx4zSuHtdtxH2H0KstvyA67uarR-zI8baFeB3Wpix-8eeLMmCJEnvyA_XkQth9uUbdMwQICzpHjnqClCM_8cTZPs">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-INT-3309</span>
+                <span class="part-location">Cockpit Panel</span>
+              </div>
+              <h3 class="product-title">Open-Pore Anthracite Oak Dash Trim Panel</h3>
+              <p class="product-desc">Sustainably harvested Bavarian timber with calibrated haptic tactile finish.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">S-Prestige Executive</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 18.500.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Part 8 -->
+        <article class="product-card">
+          <div class="product-media">
+            <img class="product-img" alt="Micro-Activated Carbon Cabin Air Filter"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVUENuOD3jr42jWg8lk_-zzOzag3wZjauT2J_f_f2QQ0myF56ei5GZuEBUSZxtKlJk_-SAEowrr4gi3rD1N97F7SbSCgqJhsmKw34dLJDO71huY26Xpsq-AZfWspP5w5ROzmrnKpLqQoeR8em_8AxCj3pWKHAGG6u15FlI3qTTgPFvXaV5c7ArphmvOsQiZ3guNINu_PSY0WX-NdSHvhn4MvRA2TmDrco30o68dtc">
+            <span class="product-media-badge"><span class="dot-round"></span><span>OEM Verified</span></span>
+          </div>
+          <div class="product-body">
+            <div>
+              <div class="part-head">
+                <span class="part-code">ALT-FIL-1102</span>
+                <span class="part-location">HVAC Filter</span>
+              </div>
+              <h3 class="product-title">Micro-Activated Carbon Cabin Air Filter Set</h3>
+              <p class="product-desc">Traps PM2.5 particulates, bio-aerosols, and industrial noxious exhaust gases.</p>
+              <div class="part-compat">
+                <span class="part-compat-tag">All Models</span>
+              </div>
+            </div>
+            <div>
+              <div class="product-price">
+                <span class="price-caption">MSRP Gross</span>
+                <span class="price-amount">Rp 1.850.000</span>
+              </div>
+              <button class="product-cta" type="button">Check Availability</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUTHENTICITY CHARTER ============ -->
+  <section class="authenticity-section">
+    <div class="auth-inner">
+      <div class="auth-grid">
+
+        <div class="auth-image">
+          <img alt="Altenberg serial engraving macro"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCurEFFK68tzS9QNxXgfYIITyziLO4Ptt5cubN8enXO6HaFt2bQEd4UlTvm3xEvanm8OSb_GBrwVDlmqeOCBPQ3YXKu5mncvBgglJjBEkJxnnV8Jp1qZewzPL64bcjVMe7rnA3A8EYg26BCX3uVENPM1iYFIrrCFrivSNSnrGjOTtJ80nvTa-73iwnT851pXmJmQr_Iq1npfDVZqzmfu3CeNW-tmUyaQ75IeGtc0vk">
+          <div class="auth-image-caption">
+            <span class="auth-image-overline">Authenticity Laser Etching</span>
+            <p class="auth-image-desc">
+              Micro-engraved tamper matrix verified against Munich Central Server records.
+            </p>
+          </div>
+        </div>
+
+        <div class="auth-content">
+          <div>
+            <div class="auth-head">
+              <span class="material-symbols-outlined">verified</span>
+              <span class="auth-overline">Factory Protection Charter</span>
+            </div>
+            <h2 class="auth-title">3-Year Factory Warranty on All Genuine Parts</h2>
+            <p class="auth-desc">
+              Every authentic Altenberg part is subjected to 2,000 hours of stress testing. Imitation components compromise vehicle structural integrity and invalidate your factory warranty.
+            </p>
+            <div class="auth-stats">
+              <div class="auth-stat">
+                <span class="auth-stat-value">2,000 hrs</span>
+                <span class="auth-stat-label">Stress Endurance Bench</span>
+              </div>
+              <div class="auth-stat">
+                <span class="auth-stat-value is-accent">100%</span>
+                <span class="auth-stat-label">Bavarian Metallurgical Match</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="serial-lookup">
+            <label class="serial-lookup-label" for="serialLookupInput">Verify Serial Authenticity</label>
+            <div class="serial-lookup-row">
+              <input id="serialLookupInput" class="serial-lookup-input"
+                     type="text" placeholder="Enter 14-digit serial (e.g. ALT-DE-8291-992)">
+              <button id="verifyBtn" class="serial-lookup-btn" type="button">Verify Code</button>
+            </div>
+            <div id="verifyMessage" class="serial-lookup-message is-hidden"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKSHOP LOCATOR ============ -->
+  <section class="workshop-section">
+    <div class="workshop-inner">
+
+      <div class="workshop-header">
+        <div>
+          <span class="workshop-overline">Direct Installation Services</span>
+          <h2 class="workshop-title">Certified Regional Master Workshops</h2>
+        </div>
+        <p class="workshop-subtitle">
+          Installations performed outside of Altenberg-certified workshops will alter component performance diagnostics.
+        </p>
+      </div>
+
+      <div class="workshop-grid">
+
+        <!-- Workshop 1 -->
+        <div class="workshop-card">
+          <div>
+            <div class="workshop-head">
+              <span class="workshop-region">Jakarta Selatan</span>
+              <span class="workshop-avail"><span class="dot-round"></span>94% Available</span>
+            </div>
+            <h3 class="workshop-name">Altenberg Central Jakarta Workshop</h3>
+            <p class="workshop-address">Jl. Jend. Sudirman Kav. 52, SCBD, Senayan, Jakarta Selatan 12190</p>
+            <div class="workshop-meta">
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">schedule</span>
+                <span>Mon - Sat: 07:30 - 19:00 WIB</span>
+              </div>
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">engineering</span>
+                <span>Master Technicians: 8 On Duty</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="workshop-cta">Direct Appointment</a>
+        </div>
+
+        <!-- Workshop 2 -->
+        <div class="workshop-card">
+          <div>
+            <div class="workshop-head">
+              <span class="workshop-region">Jakarta Barat</span>
+              <span class="workshop-avail"><span class="dot-round"></span>89% Available</span>
+            </div>
+            <h3 class="workshop-name">Altenberg West Jakarta Center</h3>
+            <p class="workshop-address">Jl. Panjang No. 88, Kebon Jeruk, Jakarta Barat 11530</p>
+            <div class="workshop-meta">
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">schedule</span>
+                <span>Mon - Sat: 08:00 - 18:00 WIB</span>
+              </div>
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">engineering</span>
+                <span>Master Technicians: 6 On Duty</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="workshop-cta">Direct Appointment</a>
+        </div>
+
+        <!-- Workshop 3 -->
+        <div class="workshop-card">
+          <div>
+            <div class="workshop-head">
+              <span class="workshop-region">Jawa Timur</span>
+              <span class="workshop-avail"><span class="dot-round"></span>91% Available</span>
+            </div>
+            <h3 class="workshop-name">Altenberg Surabaya Flagship</h3>
+            <p class="workshop-address">Jl. Mayjen Sungkono No. 120, Dukuh Pakis, Surabaya 60225</p>
+            <div class="workshop-meta">
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">schedule</span>
+                <span>Mon - Sat: 08:00 - 18:30 WIB</span>
+              </div>
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">engineering</span>
+                <span>Master Technicians: 7 On Duty</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="workshop-cta">Direct Appointment</a>
+        </div>
+
+        <!-- Workshop 4 -->
+        <div class="workshop-card">
+          <div>
+            <div class="workshop-head">
+              <span class="workshop-region">Bali</span>
+              <span class="workshop-avail"><span class="dot-round"></span>85% Available</span>
+            </div>
+            <h3 class="workshop-name">Altenberg Denpasar Service Hub</h3>
+            <p class="workshop-address">Jl. Sunset Road No. 808, Kuta, Badung, Bali 80361</p>
+            <div class="workshop-meta">
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">schedule</span>
+                <span>Mon - Sun: 08:30 - 17:30 WITA</span>
+              </div>
+              <div class="workshop-meta-row">
+                <span class="material-symbols-outlined">engineering</span>
+                <span>Master Technicians: 5 On Duty</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="workshop-cta">Direct Appointment</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ASSIST STRIP ============ -->
+  <section class="assist-strip">
+    <div class="assist-inner">
+      <div class="assist-content">
+        <div class="assist-icon">
+          <span class="material-symbols-outlined">support_agent</span>
+        </div>
+        <div class="assist-text">
+          <h4>Unsure of Part Compatibility?</h4>
+          <p>Provide your 17-character vehicle VIN number to our Munich Engineering Desk for immediate verification.</p>
+        </div>
+      </div>
+      <div class="assist-actions">
+        <a href="#">Contact Engineering Support</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand">ALTENBERG</span>
+        <p class="footer-tagline">Bavarian Engineering &amp; High-Performance Mobility.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Models</h4>
+        <ul class="footer-links">
+          <li><a href="catalog.html">A-Class Sedan</a></li>
+          <li><a href="catalog.html">S-Prestige</a></li>
+          <li><a href="catalog.html">G-Terra SUV</a></li>
+          <li><a href="catalog.html">E-Volt Electric</a></li>
+          <li><a href="catalog.html">C-Sport Coupe</a></li>
+          <li><a href="catalog.html">Performance Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Ownership &amp; Service</h4>
+        <ul class="footer-links">
+          <li><a href="spareparts.html">Genuine Spareparts</a></li>
+          <li><a href="support.html">Maintenance Schedule</a></li>
+          <li><a href="support.html">Altenberg Warranty</a></li>
+          <li><a href="support.html">Workshop Locator</a></li>
+          <li><a href="support.html">Financial Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="organization.html">Organization Structure</a></li>
+          <li><a href="about.html">Sustainability Charter</a></li>
+          <li><a href="about.html">Press &amp; Media</a></li>
+          <li><a href="about.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact &amp; Support</h4>
+        <ul class="footer-links">
+          <li><a href="support.html">Customer Assistance</a></li>
+          <li><a href="support.html">Roadside Help 24/7</a></li>
+          <li><a href="support.html">Concierge Service</a></li>
+          <li><a href="support.html">Legal &amp; Compliance</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <span>© 2025 Altenberg Motoren AG. All rights reserved.</span>
+        <span>•</span>
+        <a href="#">Privacy Statement</a>
+        <span>|</span>
+        <a href="#">Cookie Settings</a>
+        <span>|</span>
+        <a href="#">Imprint</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn"><span class="material-symbols-outlined">public</span></a>
+        <a href="#" aria-label="Social"><span class="material-symbols-outlined">share</span></a>
+        <a href="#" aria-label="Media"><span class="material-symbols-outlined">smart_display</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    /* Category chips toggle */
+    const chips = document.querySelectorAll('.category-chip');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('is-active'); });
+        chip.classList.add('is-active');
+      });
+    });
+
+    /* Serial verification tool */
+    const verifyBtn = document.getElementById('verifyBtn');
+    const verifyInput = document.getElementById('serialLookupInput');
+    const verifyMessage = document.getElementById('verifyMessage');
+
+    if (verifyBtn && verifyInput && verifyMessage) {
+      verifyBtn.addEventListener('click', function () {
+        const value = verifyInput.value.trim();
+        verifyMessage.classList.remove('is-hidden', 'is-error');
+
+        if (value.length > 3) {
+          verifyMessage.textContent =
+            'SERIAL ' + value.toUpperCase() +
+            ' // REGISTERED IN INGOLSTADT FACTORY ARCHIVES. AUTHENTIC.';
+          verifyMessage.classList.remove('is-error');
+        } else {
+          verifyMessage.textContent = 'PLEASE ENTER A VALID SERIAL NUMBER TO VERIFY.';
+          verifyMessage.classList.add('is-error');
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
